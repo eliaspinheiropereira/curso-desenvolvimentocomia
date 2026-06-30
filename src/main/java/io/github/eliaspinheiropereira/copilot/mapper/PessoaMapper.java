@@ -1,6 +1,7 @@
 package io.github.eliaspinheiropereira.copilot.mapper;
 
 import io.github.eliaspinheiropereira.copilot.dto.request.PessoaRequest;
+import io.github.eliaspinheiropereira.copilot.dto.response.PessoaResponse;
 import io.github.eliaspinheiropereira.copilot.model.Endereco;
 import io.github.eliaspinheiropereira.copilot.model.Pessoa;
 import org.mapstruct.AfterMapping;
@@ -27,6 +28,6 @@ public interface PessoaMapper {
     }
 
     Pessoa toEntity(PessoaRequest pessoaRequest);
-    PessoaRequest toRequest(Pessoa pessoa);
+    PessoaResponse toResponse(Pessoa pessoa);
 }
 

@@ -1,6 +1,7 @@
 package io.github.eliaspinheiropereira.copilot.mapper;
 
 import io.github.eliaspinheiropereira.copilot.dto.request.EnderecoRequest;
+import io.github.eliaspinheiropereira.copilot.dto.response.EnderecoResponse;
 import io.github.eliaspinheiropereira.copilot.model.Endereco;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -14,6 +15,6 @@ public interface EnderecoMapper {
     @Mapping(target = "pessoa", ignore = true)
 
     Endereco toEntity(EnderecoRequest enderecoRequest);
-    EnderecoRequest toRequest(Endereco endereco);
+    EnderecoResponse toResponse(Endereco endereco);
 }
 

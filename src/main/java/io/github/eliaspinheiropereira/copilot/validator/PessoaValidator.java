@@ -16,9 +16,9 @@ public class PessoaValidator {
     private final PessoaRepository pessoaRepository;
 
     public void validar(PessoaRequest pessoaRequest) {
-        Optional<Pessoa> buscarPessoaPorEmail = this.pessoaRepository.findByCpf(pessoaRequest.cpf());
+        Optional<Pessoa> buscarPessoaPorCPF = this.pessoaRepository.findByCpf(pessoaRequest.cpf());
 
-        if(buscarPessoaPorEmail.isPresent()){
+        if(buscarPessoaPorCPF.isPresent()){
             throw new PessoaJaExisteException("Este usuário já existe no banco de dados");
         }
     }

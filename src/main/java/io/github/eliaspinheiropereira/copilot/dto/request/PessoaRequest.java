@@ -3,6 +3,7 @@ package io.github.eliaspinheiropereira.copilot.dto.request;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -26,7 +27,9 @@ public record PessoaRequest(
         @CPF
         String cpf,
 
-        @NotBlank(message = "Telefone é obrigatória")
+        @NotBlank(message = "Telefone é obrigatório")
+        @Size(min = 10, max = 15, message = "Telefone deve ter entre 10 e 15 caracteres")
+        @Pattern(regexp = "^\\(?\\d{2}\\)?\\s?9?\\d{4}-?\\d{4}$", message = "Telefone deve estar no formato: (XX) 9XXXX-XXXX ou (XX) XXXX-XXXX")
         String telefone,
 
         @Valid
